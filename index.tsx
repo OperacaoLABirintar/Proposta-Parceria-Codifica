@@ -157,13 +157,8 @@ const App = () => {
     };
     
     // --- 2. Helper function for creating elements ---
-    // Fix: Added types for function parameters to resolve TypeScript errors.
-    const createElement = (tag: string, options: {
-        className?: string;
-        textContent?: string;
-        innerHTML?: string;
-        children?: (HTMLElement | null | undefined)[];
-    } = {}): HTMLElement => {
+    // Fix: Add types for the function parameters to resolve TypeScript errors.
+    const createElement = (tag: string, options: { className?: string; textContent?: string; innerHTML?: string; children?: (HTMLElement | null | undefined)[] } = {}) => {
         const el = document.createElement(tag);
         if (options.className) el.className = options.className;
         if (options.textContent) el.textContent = options.textContent;
